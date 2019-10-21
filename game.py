@@ -94,7 +94,7 @@ def print_location():
 
 
 def prompt():
-    print("What Would You Like To DO?") 
+    print("What Would You Like To Do? \n") 
     action = input ("> ")
     valid_input = ["move", "walk", "quit", "reveal"]
     while action.lower() not in valid_input:
@@ -106,13 +106,14 @@ def prompt():
     elif action.lower() in ["move", "walk"]:
         player_move(action.lower())
 
-    elif action.loewr() in ["reveal"]:
+    elif action.lower() in ["reveal"]:
         player_reveal(action.lower())
 
 
 def player_move(myAction):
-    whereTo = "where Do You Want To Go?"
+    whereTo = "where Do You Want To Go? \n"
     dest = input(whereTo)
+
     if dest in ["up", "north"]:
         destination = roomMap[myPlayer.location][UP]
         movement_setup(dest)
@@ -132,8 +133,10 @@ def movement_setup(destination):
     print_location()
 
 def player_reveal():
-    if roomMap[myPlayer.location][SOLVED] == True:
-        print("no item in this room")
+    if roomMap[myPlayer.location][SOLVED]:
+       print("no item in this room")
+    
+    
 
  # if player finds exit game over  
 def game_logic():
@@ -151,10 +154,32 @@ def setup_game():
         time.sleep(0.05)
     player_name = input("> ")
     myPlayer.name = player_name
+    
+    Q2 = "Welcome, " + player_name + ".\n"
+    for character in Q2:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+    player_name = input ("> ")
+    myPlayer.name = player_name
+    
+    intro1 = "Welcome to our world! \n"
+    intro2 = "Take upon this challenge and see if you can clear this map \n"
+    
+    for character in intro1:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+    
+    for character in intro2:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+    
+    
+    os.system("clear")
+    print("Let's start now!")
 
-os.system("clear")
-print("Let's start now!")
-game_logic()
-
+    game_logic()
 
 menu()
