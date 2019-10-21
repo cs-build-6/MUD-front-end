@@ -9,7 +9,7 @@ screen_width = 150
 class player:
     def __init__(self):
         self.name = ""
-        self.location = "Starting Point"
+        self.location = "a6"
         self.game_over = False
 
 myPlayer = player()
@@ -89,7 +89,7 @@ roomMap = {
 
 def print_location():
     print ('\n' + myPlayer.location)
-    print ('\n' + roomMap[myPlayer.position][roomDescription])
+    print ('\n' + roomMap[myPlayer.location][roomDescription])
 
 
 
