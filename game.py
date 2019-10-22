@@ -83,6 +83,17 @@ roomMap = {
        LEFT:"a5",
        RIGHT: "a7",
     },
+
+    "b6": {    
+       roomName: "hall way",
+       roomDescription: "You've made your first move",
+       treasureReveal: "There is no item in this room",
+       UP: "",
+       SOLVED: False,
+       DOWN: "c6",
+       LEFT:"b5",
+       RIGHT: "b7",
+    },           
 }
 
 
@@ -116,19 +127,19 @@ def player_move(myAction):
 
     if dest in ["up", "north"]:
         destination = roomMap[myPlayer.location][UP]
-        movement_setup(dest)
+        movement_setup(destination)
     elif dest in ["down", "south"]:
         destination = roomMap[myPlayer.location][DOWN]
-        movement_setup(dest)
+        movement_setup(destination)
     elif dest in ["left", "west"]:
         destination = roomMap[myPlayer.location][LEFT]
-        movement_setup(dest)
+        movement_setup(destination)
     elif dest in ["right", "east"]:
         destination = roomMap[myPlayer.location][RIGHT]
-        movement_setup(dest)
+        movement_setup(destination)
 
 def movement_setup(destination):
-    print("\n"+ "You have move to the" + destination)
+    print("\n"+ "You have moved toplay " + destination)
     myPlayer.location = destination
     print_location()
 
@@ -151,7 +162,7 @@ def setup_game():
     for character in Q1:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.01)
     player_name = input("> ")
     myPlayer.name = player_name
     
@@ -159,7 +170,7 @@ def setup_game():
     for character in Q2:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.01)
     player_name = input ("> ")
     myPlayer.name = player_name
     
