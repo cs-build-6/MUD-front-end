@@ -6,7 +6,7 @@
 	<style type = "text/css">
 
 	#bg{
-	
+		
 		background-size: cover;
 		background-attachment: fixed;
 		bottom:0;
@@ -17,9 +17,9 @@
 	.map{		
 		position:fixed;
 		top:50%;
-		left: 40%;
-		margin-top:-150px;
-		margin-bottom: -150px;		
+		left: 35%;
+		margin-top:-350px;
+				
 	}
 
 	
@@ -106,7 +106,7 @@ function Character()
 	this.dimensions	= [30,30];
 	this.position	= [45,45];
 	//time it takes to move from one title to another == 4ms
-	this.delayMove	= 400;
+	this.delayMove	= 350;
 }
 //this will take one arugmetent. It will return two value depending on the answer. If there is a movement it will reutern true otherwise false.
 Character.prototype.placeAt = function(x, y)
@@ -230,12 +230,12 @@ function drawGame()
 			switch(gameMap[((y*mapW)+x)])
 			{
 				case 0:
-				//if present assigne the color blue
-					ctx.fillStyle = "#000000";
+				//if present assigne the color #023859
+					ctx.fillStyle = "#023859";
 					break;
 					//if not wall make it a pathway
 				default:
-					ctx.fillStyle = "#00008b";
+					ctx.fillStyle = "#02735E";
 			}
 
 			//draw a rectangle at the corresponding position
@@ -244,7 +244,7 @@ function drawGame()
 		}
 	}
 
-	ctx.fillStyle = "#ffff00";
+	ctx.fillStyle = "#F2F2F2";
 	ctx.fillRect(viewport.offset[0] + player.position[0], viewport.offset[1] + player.position[1],
 		player.dimensions[0], player.dimensions[1]);
 
@@ -260,7 +260,7 @@ function drawGame()
 		
 
 <div class = "map">
-			<canvas id="game" width="400" height="400"></canvas>
+			<canvas id="game" width="800" height="800"></canvas>
 	</div>
 	
 
