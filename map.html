@@ -183,7 +183,7 @@ function drawGame()
 					
 				//if not wall make it a pathway
 				default:
-					ctx.fillStyle = "#ccffcc";
+					ctx.fillStyle = "#00008b";
 			}
 			//draw a rectangle at the corresponding position
 			ctx.fillRect( x*tileW, y*tileH, tileW, tileH);
@@ -191,7 +191,7 @@ function drawGame()
 				}
     }
     
-    ctx.fillStyle = "#0000ff";
+    ctx.fillStyle = "#ffff00";
 	ctx.fillRect(player.position[0], player.position[1],
 		player.dimensions[0], player.dimensions[1]);
 	
