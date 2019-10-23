@@ -2,21 +2,37 @@ import React from 'react';
 
 export default class Form extends React.Components { 
     state = {
-        firstName: '', 
-        lastName: '', 
-        userName: '', 
-        email: '', 
-        password: '', 
+        firstName: "", 
+        lastName: "", 
+        userName: "", 
+        email: "", 
+        password: "", 
     };
 
-    change = e => {
+    change = e => { 
+        this.props.onChange({ [e.target.name]: e.target.value });
         this.setState({
             [e.target.name]: e.target.value
         });
     }; 
 
-    onSubmit = (e) => { 
-        console.log(this.state);
+    onSubmit = e => { 
+        e.preventDefault(); 
+        // this.props.onSubmit(this.state)
+        this.setState({
+            firstName: "", 
+            lastName: "", 
+            userName: "", 
+            email: "", 
+            password: "", 
+        });
+        this.props.onChange({
+            firstName: "", 
+            lastName: "", 
+            userName: "", 
+            email: "", 
+            password: "", 
+        });
     }; 
 
     render() { 
