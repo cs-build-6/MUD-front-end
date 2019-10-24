@@ -14,7 +14,7 @@ function Registration(props) {
   const handleLogin = e => {
     e.preventDefault();
     axios
-      .post(`https://lambda-mud-test.herokuapp.com/api/login/`, userObj)
+      .post(`https://danpatadv.herokuapp.com/login/`, userObj)
       .then(res => {
         localStorage.setItem("key", res.data.key);
         props.history.push("/protected");
